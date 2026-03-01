@@ -2,12 +2,8 @@ version: '3.9'
 
 services:
   airi:
-    image: node:20-alpine
+    build: .
     container_name: airi
-    working_dir: /app
-    volumes:
-      - .:/app
-    command: sh -c "corepack enable && pnpm install && pnpm build && pnpm start"
     environment:
       - NODE_ENV=production
     ports:
